@@ -173,7 +173,7 @@ npm run test:bdd  # 155+ passing scenarios
 
 ## 🌐 Community
 
-- **Website**: [https://drasil.co](https://drasil.co)
+- **Website**: Coming soon
 
 ---
 
@@ -190,6 +190,6 @@ npm run test:bdd  # 155+ passing scenarios
 
 **Built with ❤️ in Curaçao**
 
-[Website](https://drasil.co) • [Documentation](https://github.com/drasil/drasil) • [Twitter](https://twitter.com/drasil)
+Website (coming soon) • [Documentation](https://github.com/drasil-apps/docs)
 
 </div>
