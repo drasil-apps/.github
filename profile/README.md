@@ -97,9 +97,9 @@ drasil/
 
 ### Documentation
 All documentation is maintained in the `docs/` directory:
-- **[Product Requirements](https://github.com/drasil/drasil/blob/main/docs/drasil-prd.md)** - Complete PRD with user journeys
-- **[Technical Architecture](https://github.com/drasil/drasil/blob/main/docs/drasil-arch.md)** - Architecture, 8 problem solutions, encryption, deployment
-- **[FAQ](https://github.com/drasil/drasil/blob/main/docs/drasil-faq.md)** - Common questions and blockchain justifications
+- **[Product Requirements](https://github.com/drasil-apps/docs/blob/main/drasil-prd.md)** - Complete PRD with user journeys
+- **[Technical Architecture](https://github.com/drasil-apps/docs/blob/main/drasil-arch.md)** - Architecture, 8 problem solutions, encryption, deployment
+- **[FAQ](https://github.com/drasil-apps/docs/blob/main/drasil-faq.md)** - Common questions and blockchain justifications
 
 ---
 
