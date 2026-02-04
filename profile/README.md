@@ -69,18 +69,23 @@ cd drasil
 nix develop
 
 # Build CLI
-cd drasil-cli && cargo build --release
+cd cli && cargo build --release
 ```
 
 ### Run Demo
 ```bash
-# Quick demo (no services required)
+# Full integration demo (Hardhat local + IPFS)
+cd cli
 ./examples/demo_workflow.sh
 
-# With local blockchain (Hardhat + IPFS)
-./examples/start_local_services.sh
+# Or step by step:
+./examples/start_local_services.sh  # Start Hardhat + IPFS + deploy
 ./examples/demo_workflow.sh --network hardhat
-./examples/stop_local_services.sh
+./examples/stop_local_services.sh   # Clean shutdown
+
+# Testnet demo (requires cBTC from faucet)
+./examples/setup_testnet.sh
+./examples/demo_workflow.sh --network citrea-testnet
 ```
 
 ---
@@ -89,16 +94,17 @@ cd drasil-cli && cargo build --release
 
 ```
 drasil/
-├── drasil-cli/         # Rust CLI for contact management
-├── drasil-contracts/   # Solidity smart contracts
+├── cli/                # Rust CLI for contact management
+├── contracts/          # Solidity smart contracts
 ├── recrypt-rs/         # Proxy Re-Encryption library
 └── docs/               # Documentation (PRD, architecture, FAQ)
 ```
 
 ### Documentation
 All documentation is maintained in the `docs/` directory:
-- **[Product Requirements](https://github.com/drasil-apps/docs/blob/main/drasil-prd.md)** - Complete PRD with user journeys
-- **[Technical Architecture](https://github.com/drasil-apps/docs/blob/main/drasil-arch.md)** - Architecture, 8 problem solutions, encryption, deployment
+- **[Product Requirements](https://github.com/drasil-apps/docs/blob/main/drasil-prd.md)** - Complete PRD with user journeys and feature specifications
+- **[Technical Architecture](https://github.com/drasil-apps/docs/blob/main/drasil-arch.md)** - System architecture, 8 problem solutions, encryption, deployment
+- **[Contract Interfaces](https://github.com/drasil-apps/docs/blob/main/drasil-interfaces.md)** - Complete API reference for all smart contract modules
 - **[FAQ](https://github.com/drasil-apps/docs/blob/main/drasil-faq.md)** - Common questions and blockchain justifications
 
 ---
@@ -143,31 +149,49 @@ All documentation is maintained in the `docs/` directory:
 
 ## 🧪 Testing
 
-All components include comprehensive test coverage:
+All components include comprehensive test coverage with **tag-based BDD execution**:
 
 ```bash
 # Smart contract tests
-cd drasil-contracts
-npm test
+cd contracts
+npm test                    # Unit tests
+npm run test:bdd           # All BDD scenarios (235+ tests)
+
+# Run specific test suites by tag
+npm run test:bdd:integration    # Cross-module integration tests
+npm run test:bdd:workflow       # User workflow scenarios
+npm run test:bdd:security       # Security and access control
+npm run test:bdd:multi-currency # ERC-20 payment tests
+npm run test:bdd:deletion       # Cascade delete scenarios
+npm run test:bdd:bitcoin        # Bitcoin signature tests
 
 # CLI tests
-cd drasil-cli
+cd cli
 cargo test
-
-# BDD scenarios
-npm run test:bdd  # 155+ passing scenarios
 ```
+
+**Available Tags:** `@integration`, `@workflow`, `@security`, `@module`, `@bitcoin`, `@multi-currency`, `@deletion`, `@protection`, `@pre`, `@registry`, `@element`, `@profile`, `@sharing`, `@subscription`, `@batch`, `@discovery`, `@auto-renewal`, `@endorsement`
 
 ---
 
-## 📊 Project Stats
+## 📊 Project Status
 
 | Metric | Value |
 |--------|-------|
-| **Test Coverage** | 93.3% (166/178 scenarios) |
-| **Contract Size** | All modules <24KB ✅ |
+| **BDD Test Scenarios** | 235+ scenarios across 19 feature files |
+| **Contract Architecture** | 6 modules + Registry, all <24KB ✅ |
 | **Gas Efficiency** | ~70% savings with batch operations |
-| **Network** | Citrea Testnet (Chain ID: 5115) |
+| **Networks** | Citrea Testnet (5115) + Hardhat Local (31337) |
+| **Key Features** | Multi-currency payments, cascade delete, PRE encryption |
+
+**Active Development:**
+- ✅ Modular contract architecture with cross-module permissions
+- ✅ Bitcoin-native identity and signature verification
+- ✅ Proxy Re-Encryption (PRE) for secure data sharing
+- ✅ Multi-currency support (ETH + ERC-20 tokens)
+- ✅ Comprehensive BDD test framework with tag-based execution
+- 🔄 Share deletion lifecycle (Task 62)
+- 🔄 BDD test framework hardening (Task 77)
 
 ---
 
