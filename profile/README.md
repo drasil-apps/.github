@@ -1,4 +1,4 @@
-# Drasil 🌳
+# Drasil™ 🌳
 
 **Bitcoin-Native Data Ownership Platform**
 
@@ -8,7 +8,7 @@
 
 > *Own your data. Control your privacy. Monetize your value.*
 
-Drasil is a comprehensive data ownership platform that gives users complete control over their personal data while enabling trusted third parties to create and validate authoritative records. Built on [Citrea](https://citrea.xyz), Bitcoin's first ZK rollup.
+Drasil is a complete data ownership platform that gives users full control over their personal data while enabling trusted third parties to create and validate authoritative records. Built on [Citrea](https://citrea.xyz), Bitcoin's first ZK rollup.
 
 ---
 
@@ -149,7 +149,7 @@ All documentation is maintained in the `docs/` directory:
 
 ## 🧪 Testing
 
-All components include comprehensive test coverage with **tag-based BDD execution**:
+All components include extensive test coverage with **tag-based BDD execution**:
 
 ```bash
 # Smart contract tests
@@ -189,7 +189,7 @@ cargo test
 - ✅ Bitcoin-native identity and signature verification
 - ✅ Proxy Re-Encryption (PRE) for secure data sharing
 - ✅ Multi-currency support (ETH + ERC-20 tokens)
-- ✅ Comprehensive BDD test framework with tag-based execution
+- ✅ Full BDD test framework with tag-based execution
 - 🔄 Share deletion lifecycle (Task 62)
 - 🔄 BDD test framework hardening (Task 77)
 
@@ -215,5 +215,7 @@ cargo test
 **Built with ❤️ in Curaçao**
 
 Website (coming soon) • [Documentation](https://github.com/drasil-apps/docs)
+
+**Drasil™ is a trademark of drasil.**
 
 </div>
