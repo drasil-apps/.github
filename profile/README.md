@@ -197,7 +197,7 @@ cargo test
 
 ## 🌐 Community
 
-- **Website**: Coming soon
+- **Website**: [drasil.co](https://drasil.co)
 
 ---
 
@@ -214,7 +214,7 @@ cargo test
 
 **Built with ❤️ in Curaçao**
 
-Website (coming soon) • [Documentation](https://github.com/drasil-apps/docs)
+[drasil.co](https://drasil.co) • [Documentation](https://github.com/drasil-apps/docs)
 
 **Drasil™ is a trademark of drasil.**
 
